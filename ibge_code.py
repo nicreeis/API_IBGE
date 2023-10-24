@@ -20,10 +20,10 @@ def obter_sexo_correto(nome):
     else:
         return "Feminino"
 
-df_dados_clientes = pd.read_csv(r'C:\Users\nfrei\Downloads\dataset_clientes.csv')
+df_dados_clientes = pd.read_csv(r'\dataset_clientes.csv')
 
 df_dados_clientes['Sexo Corrigido'] = df_dados_clientes['Nome'].apply(obter_sexo_correto)
 
 df_dados_clientes['Sexo está correto?'] = np.where(df_dados_clientes['Sexo'] == df_dados_clientes['Sexo Corrigido'] , 'True','False')
 
-df_dados_clientes.to_csv(r'C:\Users\nfrei\Desktop\dados_clientes_corrigido.csv', index=False)
+df_dados_clientes.to_csv(r'\dados_clientes_corrigido.csv', index=False)
